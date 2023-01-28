@@ -1,0 +1,32 @@
+p = '0abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ' 
+tot_p = 0
+rucksacks = []
+both = []
+
+with open("day_3t.txt") as f:
+
+	for a in f:
+		comp1 = a[0:int(len(a)/2)].strip()      
+		comp2 = a[int(len(a)/2):len(a)].strip() 
+		both_comp = [comp1,comp2]
+		rucksacks.append(both_comp)
+
+
+	for items in rucksacks:
+		comp1, comp2 = items
+		x = 0
+		while x < len(comp1):
+			if comp1[x] in comp2:
+				both.append(comp1[x])
+				tot_p += p.index(comp1[x])
+				break
+			x += 1
+# Part 1
+print(rucksacks)		
+print(tot_p)
+
+
+
+		
+
+		
